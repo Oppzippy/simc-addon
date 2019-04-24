@@ -1,7 +1,10 @@
 <Ui xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\FrameXML\UI.xsd">
   <GameTooltip name="SimulationcraftTooltip" frameStrata="TOOLTIP" hidden="true" parent="UIParent" inherits="GameTooltipTemplate"/>
   
-  <Frame name="SimcCopyFrame" parent="UIParent" movable="true" enableMouse="true" inherits="DialogBoxFrame">
+  <Frame name="SimcCopyFrame" parent="UIParent" movable="true" enableMouse="true" hidden="true">
+  <Anchors>
+    <Anchor point="CENTER"/>
+  </Anchors>
   <Size>
     <AbsDimension x="700" y="450"/>
   </Size>
@@ -30,6 +33,23 @@
     </Layer>
   </Layers>
   <Frames>
+    <button name="SimcCopyFrameButton">
+      <Size x="128" y="32"/>
+      <Anchors>
+        <Anchor point="BOTTOM" x="0" y="16"/>
+      </Anchors>
+      <Scripts>
+        <OnClick>
+          self:GetParent():Hide()
+        </OnClick>
+      </Scripts>
+      <NormalTexture inherits="DialogButtonNormalTexture"/>
+      <PushedTexture inherits="DialogButtonPushedTexture"/>
+      <HighlightTexture inherits="DialogButtonHighlightTexture"/>
+      <ButtonText text="OKAY"/>
+      <NormalFont style="DialogButtonNormalText"/>
+      <HighlightFont style="DialogButtonHighlightText"/>
+    </button>
     <ScrollFrame name="SimcCopyFrameScroll" inherits="UIPanelScrollFrameTemplate" toplevel="true">
       <Anchors>
         <Anchor point="TOP">
